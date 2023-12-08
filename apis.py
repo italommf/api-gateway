@@ -1,7 +1,9 @@
 import streamlit as st
 import requests
 
-class kanye_rest():
+class ApiGateway():
+
+
 
     def conselho():
         url = 'https://api.kanye.rest/' 
@@ -13,7 +15,7 @@ class kanye_rest():
         else:
             return None
         
-class cat_images():
+
 
     def gatinho():
         url = 'https://api.thecatapi.com/v1/images/search' 
@@ -28,11 +30,11 @@ class cat_images():
         else:
             st.error(f"Erro ao obter a resposta da API: {response.status_code}")
             return None
-        
-class tradução_minion():
+
+
 
     def ingles_minion(data):            
-        endpoint = 'https://api.funtranslations.com/translate/navi.json'
+        endpoint = 'https://api.funtranslations.com/translate/minions.json'
         payload = {'text': data}
 
         response = requests.post(endpoint, data = payload)

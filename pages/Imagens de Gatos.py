@@ -1,10 +1,10 @@
-from apis import cat_images
+from apis import ApiGateway
 import streamlit as st
 
 st.markdown(" 🐱 Gatitos Aleatórios 🐈 ")
 st.sidebar.markdown("https://api.thecatapi.com/v1/images/search")
 
-cat_image_url = cat_images.gatinho()
+cat_image_url = ApiGateway.gatinho()
 
 if cat_image_url:
     st.write("Um gatito:")

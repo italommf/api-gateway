@@ -1,17 +1,17 @@
-from apis import kanye_rest, tradução_minion
+from apis import ApiGateway
 import streamlit as st
 
-data = kanye_rest.conselho()
+data = ApiGateway.conselho()
 
 if data:
 
     st.markdown("**Texto Original:**")
     st.info(f"_**{data}**_") 
 
-    traducao = tradução_minion.ingles_minion(data)
+    traducao = ApiGateway.ingles_minion(data)
 
     if traducao:
-        st.markdown("**Texto Traduzido para Minion:**")
+        st.markdown("**Texto Traduzido para Navi:**")
         st.info(traducao)
 else:
     st.write("Não foi possível obter os dados da API.")
