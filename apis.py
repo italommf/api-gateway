@@ -31,13 +31,11 @@ class cat_images():
         
 class tradução_minion():
 
-    def ingles_minion(data):
-            
-        endpoint = 'https://api.funtranslations.com/translate/minion.json'
-        headers = {'X-Funtranslations-Api-Secret': 'SUA_CHAVE_DE_API_AQUI'}
+    def ingles_minion(data):            
+        endpoint = 'https://api.funtranslations.com/translate/navi.json'
         payload = {'text': data}
 
-        response = requests.post(endpoint, headers = headers, data = payload)
+        response = requests.post(endpoint, data = payload)
 
         if response.status_code == 200:
             translated_text = response.json().get('contents').get('translated')
